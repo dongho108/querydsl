@@ -7,6 +7,7 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 import org.springframework.data.support.PageableExecutionUtils;
 import study.querydsl.dto.MemberSearchCondition;
 import study.querydsl.dto.MemberTeamDto;
@@ -27,6 +28,8 @@ public class MemberRepositoryImpl implements MemberRepositoryCustom{
     public MemberRepositoryImpl(EntityManager em) {
         this.queryFactory = new JPAQueryFactory(em);
     }
+
+
 
     @Override
     public List<MemberTeamDto> search(MemberSearchCondition condition) {
